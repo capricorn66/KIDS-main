@@ -1,54 +1,54 @@
 extends layout/_layout
 
 block variables
-    - title = 'HOME';
+    - title = 'ARTICLE';
 
 block body
-    body.flex.flex-col.text-blue-900
+    body.flex.flex-col.text-blue-900.bg-gray-200
         +header({
             nav: [
                 {label: 'BLOG'},
-                {label: 'KONTAKT', active: true}
+                {label: 'KONTAKT'}
             ]
         })
 
-        .jumbotron.relative.overflow-hidden.mb-10(class="sm:h-[40rem] py-10 sm:py-0 before:block before:absolute before:w-1/3 before:right-0 before:-top-20 before:h-20 before:rounded-full before:bg-orange-500 before:drop-shadow-2xl")
-            .container.mx-auto.px-3.h-full
-                .flex.h-full
-                    div(class="sm:w-2/3 md:w-1/2").flex.items-center
-                        .flex-col
-                            img(src="/static/jumbotron-brand-large.svg" class="w-2/3 sm:w-full mx-auto").mb-10
-                            .px-5.text-center(class="sm:text-left")
-                                p.mb-10 Quisque risus metus, convallis sed convallis ut, interdum eget sem. Phasellus non ligula vitae mauris mattis porta vel ac massa. Nulla venenatis, nunc eget efficitur faucibus, diam felis rutrum sapien, blandit gravida dui metus eget lacus. Nulla facilisi.
-                                +button({
-                                    type: "button",
-                                    size: 'h-10 px-6',
-                                    variant: "bg-gradient-to-r from-orange-500 to-pink-500 drop-shadow-lg hover:drop-shadow-xl transition-all text-white text-lg outline outline-2 hover:outline-pink-500 focus:outline-pink-500",
-                                    label: 'Dołącz do nas!'
-                                })
-                    div(class="w-1/3 md:w-1/2 md:justify-center hidden sm:flex").relative
-                        div(class="w-full md:w-1/2")
-                            img(src="/static/jumbotron-kid.png" class="md:left-0").h-full.max-w-none.absolute.-left-10
-                        div(class="w-1/2 lg:w-1/3 justify-center xl:justify-end hidden md:flex").items-center
-                            img(src="/static/jumbotron-phone.svg" class="h-3/4").absolute
+        main.container.mx-auto.px-3.grow.pb-16
+            .text-md.py-4.border-b.border-gray-300.mb-10
+                a(href="" data-after="/" class="hover:text-orange-500 after:content-[attr(data-after)] after:mx-2") Super Kids
+                a(href="" data-after="/" class="hover:text-orange-500 after:content-[attr(data-after)] after:mx-2") Twoje konto
+                span.text-orange-500.font-bold Twoje dzieci
 
-        main.container.mx-auto.px-3.grow
-            .flex.-mx-3
-                div(class="w-1/3 md:w-1/2 sm:block").px-3.relative.hidden
-                    img(src="/static/about-us.png").h-full.max-w-none.absolute.right-0
 
-                div(class="sm:w-2/3 md:w-1/3 md:ml-16 sm:ml-8 sm:text-left").px-3.text-center
-                    img(src="/static/SuperKIDS-face.svg" class="sm:mx-0").w-28.mb-6.mx-auto
+            h1.mb-4.font-bold.text-xsl Lorem ipsum dolor sit amet,
+            p.mb-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dicta distinctio ipsum, iusto minus officia optio, possimus provident quasi quibusdam saepe sit suscipit tenetur totam voluptas? Iure quod repellendus tenetur?
+            p.mb-2 Accusamus accusantium alias, autem beatae doloribus eaque, exercitationem fugiat molestiae perspiciatis repellendus similique temporibus voluptatum. Aliquid, culpa distinctio error est et exercitationem fuga incidunt itaque porro quasi quos repudiandae sit.
 
-                    h2.font-extrabold.text-xxl.mb-6 O aplikacji
-                    p.mb-10 Quisque risus metus, convallis sed convallis ut, interdum eget sem. Phasellus non ligula vitae mauris mattis porta vel ac massa. Nulla venenatis, nunc eget efficitur faucibus, diam felis rutrum sapien, blandit gravida dui metus eget lacus. Nulla facilisi.
+            h2.mb-3.font-bold.text-xxl Lorem ipsum dolor sit amet,
+            h3.mb-2.font-bold.text-sl Lorem ipsum dolor sit amet,
+            h4.mb-2.font-bold.text-xl Lorem ipsum dolor sit amet,
+            h5.mb-2.font-bold.text-lg Lorem ipsum dolor sit amet,
+            h6.mb-2.font-bold.text-md Lorem ipsum dolor sit amet,
 
-                    +button({
-                        type: "button",
-                        size: 'h-10 px-6',
-                        variant: "bg-orange-500 text-white text-lg drop-shadow-lg hover:drop-shadow-xl transition-all outline outline-2 hover:outline-orange-500 focus:outline-orange-500",
-                        label: 'Zarejestruj się'
-                    }).mb-16
+            hr.border-b.border-gray-300.my-3
+
+            ul.list-disc.ml-3.mb-3
+                li Animi dicta distinctio ipsum,
+                li Accusamus accusantium alias,
+                li Provident quasi
+                    ul.list-disc.ml-3.my-1
+                        li Animi dicta distinctio ipsum,
+                        li Accusamus accusantium alias,
+                        li Provident quasi quibusdam saepe
+
+                li Provident quasi quibusdam saepe
+
+            hr.border-b.border-gray-300.my-3
+
+            ol.list-decimal.ml-3.mb-3
+                li Animi dicta distinctio ipsum,
+                li Accusamus accusantium alias,
+                li Provident quasi quibusdam saepe
+
 
 
         footer.bg-gray-100

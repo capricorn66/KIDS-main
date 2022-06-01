@@ -7,7 +7,7 @@ mixin header(args)
     - DEFAULT_OPTIONS.nav.item.active = false
     - args = Object.assign({}, DEFAULT_OPTIONS, args || {});
 
-    header.relative.z-10.py-6(
+    header.relative.z-10.py-6.bg-white(
         class=args.variant && args.variant
         class=attributes.class)
         .container.mx-auto.px-3.flex.items-center
