@@ -1,0 +1,362 @@
+extends layout/_layout
+
+block variables
+    - title = 'DASHBOARD';
+
+block body
+    body.flex.flex-col.text-blue-900.bg-gray-200
+        +header({
+            nav: [
+                {label: 'BLOG'},
+                {label: 'KONTAKT'}
+            ]
+        })
+
+        main.container.mx-auto.px-3.grow.pb-16
+
+            .flex.items-start.border-b.border-gray-300.mb-10
+                .text-md.py-4.mr-6
+                    a(href="" data-after="/" class="hover:text-orange-500 after:content-[attr(data-after)] after:mx-2") Super Kids
+                    a(href="" data-after="/" class="hover:text-orange-500 after:content-[attr(data-after)] after:mx-2") Twoje konto
+                    span.text-orange-500.font-bold Twoje dzieci
+
+                button(data-side-toggle class="hover:text-green-500 focus:text-green-500 lg:hidden").p-1.text-xxl.ml-auto.transition
+                    i.icon-menu
+
+            .flex.flex-wrap.-mx-3
+                .px-3(class="w-72 lg:w-3/12 lg:relative lg:bg-transparent lg:translate-x-0 lg:opacity-100 lg:drop-shadow-lg" data-side-nav).absolute.z-10.bg-white.border.drop-shadow-2xl.rounded-xl.transition.-translate-x-72.opacity-0.pointer-events-none
+
+                    button(data-side-toggle class="hover:text-green-500 focus:text-green-500").p-1.text-lg.ml-auto.transition.float-right.mt-1
+                        i.icon-close
+
+                    .py-5.mb-6(class="lg:bg-white lg:border lg:drop-shadow-lg lg:rounded-xl lg:px-6 px-3")
+                        h4.mb-2.font-bold.text-xl.text-green-500 Zdarzenia
+
+                        ul
+                            li(class="last:border-0 border-green-500/50").border-b
+                                a(href="").py-1.block.font-bold Twoje dzieci
+                            li(class="last:border-0 border-green-500/50").border-b
+                                a(href="").py-1.block Historia zdarzeń
+                            li(class="last:border-0 border-green-500/50").border-b
+                                a(href="").py-1.block Zdefiniuj własne zdarzenia
+                            li(class="last:border-0 border-green-500/50").border-b
+                                a(href="").py-1.block Dodaj wykorzystanie punktów
+                            li(class="last:border-0 border-green-500/50").border-b
+                                a(href="").py-1.block Nagrody specjalne
+
+                    .py-5.mb-6(class="lg:bg-white lg:border lg:drop-shadow-lg lg:rounded-xl lg:px-6 px-3")
+                        h4.mb-2.font-bold.text-xl Nawigacja
+
+                        ul
+                            li(class="last:border-0 border-blue-200/20").border-b
+                                a(href="").py-1.block Twoje konto
+                            li(class="last:border-0 border-blue-200/20").border-b
+                                a(href="").py-1.block Ustawienia konta
+                            li(class="last:border-0 border-blue-200/20").border-b
+                                a(href="").py-1.block Panel administracyjny
+                            li(class="last:border-0 border-blue-200/20").border-b
+                                a(href="").py-1.block Wyloguj się
+
+                    .text-sm.opacity-40.text-center.mb-6 Reklama
+
+                    a(href="").block.mb-6
+                        img(src="/static/_temp/tomi.png").block.w-full.border.drop-shadow-lg.rounded-xl
+
+                .px-3(class="w-full lg:w-9/12")
+
+                    .py-5.bg-gradient-to-r.from-yellow-500.to-orange-500.drop-shadow-lg.rounded-xl.mb-6.overflow-hidden.relative.flex.items-center(class="md:px-6 px-3")
+                        .font-bold.text-xl Twoje dzieci
+                        img.absolute(src="/static/SuperKIDS-smile-face-bg.svg" width="180" class="left-1/4 -top-20 inset-0")
+
+                        +button({
+                            type: "button",
+                            size: 'h-10 px-6',
+                            modal: '#register-modal',
+                            variant: "bg-blue-900 text-white text-lg drop-shadow-lg hover:drop-shadow-xl transition-all outline outline-2 hover:outline-blue-900 focus:outline-blue-900",
+                            label: 'Dodaj dziecko'
+                        }).ml-auto
+
+
+                    .bg-white.border.drop-shadow-lg.rounded-xl.mb-6
+                        .py-3.bg-gray-100.rounded-t-xl.border-b(class="md:px-6 px-3")
+                            .flex.-mx-3
+                                .px-3(class="w-1/2").flex.items-center
+                                    .flex.items-center
+                                        img(src="/static/_temp/profile-photo.jpg" class="md:mr-5 md:w-14.md:h-14").w-10.h-10.rounded-full.border-2.border-yellow-500.mr-3
+                                        .font-bold(class="text-sl md:text-xsl") Kacper
+                                .px-3(class="w-1/2").flex.items-center
+                                    .items-center.mr-4(class="hidden lg:flex")
+                                        img(src="/static/star.svg" width="30").mr-3
+                                        .text-xl Punkty
+                                    .bg-blue-900.text-orange-500.rounded-full.inline-block.align-bottom.py-2.whitespace-nowrap.ml-auto(class="md:px-6 px-4")
+                                        span(class="text-sl md:text-xsl").font-bold.mr-2 1053
+                                        span.font-light.text-xl pkt
+                        .py-5(class="md:px-6 px-3")
+
+                            .mb-12
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2") Lista zdarzeń
+
+                                    .px-3(class="w-2/3 md:w-2/6") 10
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-zoom
+
+                                hr.border-t.border-gray-300.my-3
+
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2") Lista zdarzeń do akceptacji
+
+                                    .px-3(class="w-2/3 md:w-2/6") 0
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-edit
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-zoom
+
+                                hr.border-t.border-gray-300.my-3
+
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2") Dziecko posiada konto użytkownika
+
+                                    .px-3(class="w-2/3 md:w-2/6") Nie
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-edit
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-zoom
+
+                                hr.border-t.border-gray-300.my-3
+
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2")
+                                        .flex.items-center.mb-5(class="md:mb-0")
+                                            img(src="/static/cup.svg" width="24").mr-3
+                                            | Wyjazd do Disneyland'u
+
+                                    .px-3(class="w-2/3 md:w-2/6")
+                                        .font-bold.mb-1 1083 / 2500
+                                        .rounded-full.relative.bg-blue-900.h-5.outline.outline-offset.outline-blue-900
+                                            .rounded-full.absolute.h-full.bg-gradient-to-r.from-yellow-500.to-orange-500.text-center.text-sm.font-bold(style="width: 32%") 32%
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-edit
+
+                                hr.border-t.border-gray-300.my-3
+
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2")
+                                        .flex.items-center.mb-5(class="md:mb-0")
+                                            img(src="/static/cup.svg" width="24").mr-3
+                                            div
+                                                div Wakacje nad morzem
+                                                .inline-flex.items-center.rounded-full.relative.bg-yellow-400.h-5.text-sm.px-3 do 01/07.2022 15:00
+
+                                    .px-3(class="w-2/3 md:w-2/6")
+                                        .font-bold.mb-1 1083 / 2500
+                                        .rounded-full.relative.bg-blue-900.h-5.outline.outline-offset.outline-blue-900
+                                            .rounded-full.absolute.h-full.bg-gradient-to-r.from-yellow-500.to-orange-500.text-center.text-sm.font-bold(style="width: 78%") 78%
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-edit
+
+                                hr.border-t.border-gray-300.my-3
+
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2")
+                                        .flex.items-center.mb-5(class="md:mb-0")
+                                            img(src="/static/cup.svg" width="24").mr-3
+                                            div
+                                                div Nowy rower
+                                                .inline-flex.items-center.rounded-full.relative.bg-green-400.h-5.text-sm.px-3 od 01/07.2022 15:00
+                                                .inline-flex.items-center.rounded-full.relative.bg-yellow-400.h-5.text-sm.px-3 do 01/07.2022 15:00
+
+                                    .px-3(class="w-2/3 md:w-2/6")
+                                        .font-bold.mb-1 0 / 2500
+                                        .rounded-full.relative.bg-blue-900.h-5.outline.outline-offset.outline-blue-900
+                                            .rounded-full.absolute.h-full.bg-gray-400.text-center.text-sm.font-bold(class="min-w-[1.25rem]")
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+
+                                hr.border-t.border-gray-300.my-3
+
+
+                            a(href="" class="text-green-600 font-medium hover:underline") Profil dziecka
+                            hr.border-t.border-gray-300.my-2
+                            a(href="" class="text-green-600 font-medium hover:underline") Zarządzaj dzieckiem
+                            hr.border-t.border-gray-300.my-2
+                            a(href="" class="text-green-600 font-medium hover:underline") Dodaj zdarzenie
+                            hr.border-t.border-gray-300.my-2
+                            a(href="" class="text-green-600 font-medium hover:underline") Dodaj wykorzystanie punktów
+                            hr.border-t.border-gray-300.my-2
+                            a(href="" class="text-green-600 font-medium hover:underline") Dodaj nagrodę specjalną
+
+
+                    .bg-white.border.drop-shadow-lg.rounded-xl.mb-6
+                        .py-3.bg-gray-100.rounded-t-xl.border-b(class="md:px-6 px-3")
+                            .flex.-mx-3
+                                .px-3(class="w-1/2").flex.items-center
+                                    .flex.items-center
+                                        img(src="/static/_temp/profile-photo-2.jpg" class="md:mr-5 md:w-14.md:h-14").w-10.h-10.rounded-full.border-2.border-yellow-500.mr-3
+                                        .font-bold(class="text-sl md:text-xsl") Julia
+                                .px-3(class="w-1/2").flex.items-center
+                                    .items-center.mr-4(class="hidden lg:flex")
+                                        img(src="/static/star.svg" width="30").mr-3
+                                        .text-xl Punkty
+                                    .bg-blue-900.text-orange-500.rounded-full.inline-block.align-bottom.py-2.whitespace-nowrap.ml-auto(class="md:px-6 px-4")
+                                        pan(class="text-sl md:text-xsl").font-bold.mr-2 90
+                                        span.font-light.text-xl pkt
+                        .py-5(class="md:px-6 px-3")
+
+                            .mb-12
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2") Lista zdarzeń
+
+                                    .px-3(class="w-2/3 md:w-2/6") 10
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-zoom
+
+                                hr.border-t.border-gray-300.my-3
+
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2") Lista zdarzeń do akceptacji
+
+                                    .px-3(class="w-2/3 md:w-2/6") 0
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-edit
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-zoom
+
+                                hr.border-t.border-gray-300.my-3
+
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2") Dziecko posiada konto użytkownika
+
+                                    .px-3(class="w-2/3 md:w-2/6") Nie
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-edit
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-zoom
+
+                                hr.border-t.border-gray-300.my-3
+
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2")
+                                        .flex.items-center.mb-5(class="md:mb-0")
+                                            img(src="/static/cup.svg" width="24").mr-3
+                                            | Wyjazd do Disneyland'u
+
+                                    .px-3(class="w-2/3 md:w-2/6")
+                                        .font-bold.mb-1 1083 / 2500
+                                        .rounded-full.relative.bg-blue-900.h-5.outline.outline-offset.outline-blue-900
+                                            .rounded-full.absolute.h-full.bg-gradient-to-r.from-yellow-500.to-orange-500.text-center.text-sm.font-bold(style="width: 32%") 32%
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-edit
+
+                                hr.border-t.border-gray-300.my-3
+
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2")
+                                        .flex.items-center.mb-5(class="md:mb-0")
+                                            img(src="/static/cup.svg" width="24").mr-3
+                                            div
+                                                div Wakacje nad morzem
+                                                .inline-flex.items-center.rounded-full.relative.bg-yellow-400.h-5.text-sm.px-3 do 01/07.2022 15:00
+
+                                    .px-3(class="w-2/3 md:w-2/6")
+                                        .font-bold.mb-1 1083 / 2500
+                                        .rounded-full.relative.bg-blue-900.h-5.outline.outline-offset.outline-blue-900
+                                            .rounded-full.absolute.h-full.bg-gradient-to-r.from-yellow-500.to-orange-500.text-center.text-sm.font-bold(style="width: 78%") 78%
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+                                        button(type="button" class="hover:text-green-500").text-orange-500.px-2.transition
+                                            i.icon-edit
+
+                                hr.border-t.border-gray-300.my-3
+
+                                .flex.flex-wrap.-mx-3
+                                    .px-3(class="w-full md:w-1/2")
+                                        .flex.items-center.mb-5(class="md:mb-0")
+                                            img(src="/static/cup.svg" width="24").mr-3
+                                            div
+                                                div Nowy rower
+                                                .inline-flex.items-center.rounded-full.relative.bg-green-400.h-5.text-sm.px-3 od 01/07.2022 15:00
+                                                .inline-flex.items-center.rounded-full.relative.bg-yellow-400.h-5.text-sm.px-3 do 01/07.2022 15:00
+
+                                    .px-3(class="w-2/3 md:w-2/6")
+                                        .font-bold.mb-1 0 / 2500
+                                        .rounded-full.relative.bg-blue-900.h-5.outline.outline-offset.outline-blue-900
+                                            .rounded-full.absolute.h-full.bg-gray-400.text-center.text-sm.font-bold(class="min-w-[1.25rem]")
+
+                                    .px-3(class="w-1/3 md:w-1/6").text-right.self-end
+
+                                hr.border-t.border-gray-300.my-3
+
+
+                            a(href="" class="text-green-600 font-medium hover:underline") Profil dziecka
+                            hr.border-t.border-gray-300.my-2
+                            a(href="" class="text-green-600 font-medium hover:underline") Zarządzaj dzieckiem
+                            hr.border-t.border-gray-300.my-2
+                            a(href="" class="text-green-600 font-medium hover:underline") Dodaj zdarzenie
+                            hr.border-t.border-gray-300.my-2
+                            a(href="" class="text-green-600 font-medium hover:underline") Dodaj wykorzystanie punktów
+                            hr.border-t.border-gray-300.my-2
+                            a(href="" class="text-green-600 font-medium hover:underline") Dodaj nagrodę specjalną
+
+
+
+        footer.bg-gray-100
+            .container.mx-auto.px-3.flex.py-6
+                .flex.flex-wrap.-mx-3
+                    div(class="md:w-1/2 md:pb-0 md:mb-0").px-3.pb-4.mb-4
+                        svg(
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 146 27.1"
+                            class="w-24 mb-6")
+                            path(fill="currentColor" d="M0,17.7l1.8-4c1.9,1.2,4.1,1.8,6.3,1.9c2.2,0,3.1-0.6,3.1-1.5c0-3-10.8-0.8-10.8-7.9C0.4,2.8,3.2,0,8.8,0c2.4,0,4.8,0.5,6.9,1.7l-1.7,4c-1.6-0.9-3.4-1.4-5.3-1.5C6.4,4.2,5.6,5,5.6,5.9c0,2.9,10.8,0.7,10.8,7.7c0,3.3-2.8,6.1-8.4,6.1C5.2,19.9,2.4,19.2,0,17.7")
+                            path(fill="currentColor" d="M34.1,4.7v14.7h-4.9v-1.6c-1.1,1.2-2.7,1.9-4.4,1.8c-3.6,0-6.2-2.1-6.2-6.7V4.7h5.2v7.4c0,2.3,0.9,3.2,2.4,3.2s2.8-1,2.8-3.5V4.7C29,4.7,34.1,4.7,34.1,4.7z")
+                            path(fill="currentColor" d="M53.9,12.1c0,4.7-3.2,7.6-7.2,7.6c-1.5,0.1-3-0.5-4.1-1.5v6.6h-5.2v-20h4.9v1.5c1.1-1.2,2.7-1.8,4.3-1.7C50.7,4.5,53.9,7.4,53.9,12.1 M48.7,12.1c0-2.2-1.4-3.5-3.1-3.5s-3.1,1.3-3.1,3.5s1.4,3.5,3.1,3.5S48.7,14.3,48.7,12.1")
+                            path(fill="currentColor" d="M71.3,13.4H60.6c0.5,1.5,2,2.5,3.6,2.4c1.3,0,2.5-0.4,3.4-1.3l2.7,2.8c-1.4,1.6-3.5,2.4-6.3,2.4c-5.2,0-8.6-3.2-8.6-7.6s3.4-7.6,8.1-7.6c4.3,0,7.9,2.8,7.9,7.6C71.4,12.5,71.3,13,71.3,13.4 M60.5,10.7h6c-0.3-1.7-1.9-2.8-3.6-2.5C61.7,8.4,60.8,9.4,60.5,10.7")
+                            path(fill="currentColor" d="M83.6,4.5v4.6C83.2,9,82.8,9,82.4,9c-2.1,0-3.5,1.1-3.5,3.6v6.8h-5.2V4.7h4.9v1.8C79.9,5.1,81.8,4.3,83.6,4.5")
+                            path(fill="#FD0924" d="M132.2,20.7l1.5-3.5c1.6,0.9,3.3,1.4,5.1,1.4c1.7,0,2.3-0.4,2.3-1c0-2-8.7,0.3-8.7-5.6c0-2.8,2.6-4.9,7.2-4.9c2,0,4,0.4,5.8,1.2l-1.5,3.5c-1.3-0.7-2.8-1.1-4.2-1.1c-1.7,0-2.4,0.5-2.4,1c0,2,8.7-0.2,8.7,5.7c0,2.7-2.5,4.8-7.3,4.8C136.5,22.2,134.2,21.7,132.2,20.7")
+                            path(fill="#009BDC" d="M130.1,1.7v20.1h-4.9v-1.5c-1.1,1.2-2.7,1.8-4.3,1.7c-4,0-7.2-2.9-7.2-7.6s3.2-7.6,7.2-7.6c1.5-0.1,3,0.5,4.1,1.5V1.6L130.1,1.7L130.1,1.7z M125,14.5c0-2.2-1.3-3.5-3.1-3.5s-3.1,1.2-3.1,3.5s1.3,3.5,3.1,3.5C123.6,18,125,16.7,125,14.5")
+                            path(fill="#FF6F00" d="M105.4,2.9c0.1-1.6,1.4-2.8,2.9-2.8c0.1,0,0.1,0,0.2,0c1.9,0,3.2,1.1,3.2,2.7s-1.3,2.9-2.9,2.8c-0.1,0-0.2,0-0.3,0c-1.6,0.2-3-1-3.1-2.5C105.4,3,105.4,2.9,105.4,2.9 M105.9,7.2h5.2v14.7h-5.2V7.2z")
+                            path(fill="#98C511" d="M93.3,14.9l-2,2.1v4.8H86v-19h5.3v7.9l7.4-7.9h5.9l-7.8,8.4l8.2,10.6h-6.2L93.3,14.9z")
+
+                        p.text-sm.mb-6 Cras id libero justo. Donec sed enim quis tellus scelerisque viverra. Ut blandit massa et velit vehicula, vitae volutpat arcu feugiat. Vivamus tempus euismod felis. Pellentesque et lorem.
+
+                        .flex
+                            a(href="" class="hover:text-blue-500").text-pink-500.mr-4.transition
+                                i.icon-facebook.text-sl
+                            a(href="" class="hover:text-blue-500").text-pink-500.mr-4.transition
+                                i.icon-twitter.text-sl
+                            a(href="" class="hover:text-blue-500").text-pink-500.mr-4.transition
+                                i.icon-youtube.text-sl
+
+                    div(class="md:w-1/3 md:ml-16").px-3.flex
+                        .flex.flex-col.mr-20
+                            a(href="" class="hover:text-blue-500").font-bold Kontakt
+                            a(href="" class="hover:text-blue-500").font-bold Blog
+                            a(href="" class="hover:text-blue-500").font-bold Regulamin
+                        .flex.flex-col
+                            a(href="" class="hover:text-blue-500").font-bold FAQ
+                            a(href="" class="hover:text-blue-500").font-bold Pomoc
+                            a(href="" class="hover:text-blue-500").font-bold Pliki Cookies
+
+            .bg-blue-900.text-white.py-3
+                .container.mx-auto.px-4.flex
+
+                    .ml-auto.text-sm.opacity-80 &copy; 2022 SuperKids
