@@ -11,27 +11,59 @@ body {
 }
 
 .control-check {
-  @apply my-1 h-3 w-3 border-2 focus:ring-offset-0 focus:ring mr-3 checked:hover:bg-blue-600 checked:focus:bg-blue-600
-}
-
-.control-outline-check-lg {
-  @apply my-1 h-4 w-4 border-2 focus:ring-offset-0 focus:ring mr-2 checked:hover:bg-transparent checked:focus:bg-transparent
+  @apply mt-0.5 h-4 w-4 border focus:ring-offset-0 focus:ring mr-2 checked:hover:bg-green-500 checked:focus:bg-green-500 transition
 }
 
 .control-input {
-  @apply block w-full rounded-full mb-2 placeholder-blue-900/40 h-14 text-blue-900 text-xl
+  @apply block w-full rounded-full mb-2 placeholder-blue-900/40 h-10 text-blue-900 text-lg px-5 transition
+}
+
+.control-textarea {
+  @apply block w-full rounded-xl mb-2 placeholder-blue-900/40 text-blue-900 text-lg p-5 transition
 }
 
 .modal-open {
-  @apply z-[-1] overflow-hidden fixed h-screen w-screen
+  @apply z-[-1] overflow-hidden fixed w-screen
 }
 
 .modal-backdrop {
-  @apply fixed top-0 left-0 z-40 w-full h-full pointer-events-none bg-blue-900/80
+  @apply fixed top-0 left-0 z-40 w-full h-full pointer-events-none bg-blue-900/50
+}
+
+body:not(.modal-open) .modal-backdrop {
+  @apply hidden
+}
+
+.modal:not(.shown) {
+  @apply hidden
 }
 
 .modal {
-  @apply fixed bottom-0 left-0 z-40 w-full h-full flex flex-col justify-end
+  @apply fixed bottom-0 left-0 z-40 w-full h-full flex justify-center items-center opacity-0 scale-95 transition duration-300 max-h-[calc(100vh-5rem)] my-10
+}
+
+body.modal-open .modal {
+  @apply opacity-100 scale-100
+}
+
+.modal-content {
+  @apply bg-white py-8 px-12 rounded-xl w-11/12 max-w-[420px] relative max-h-full overflow-y-auto
+}
+
+table {
+  @apply border-collapse
+}
+
+table th {
+  @apply border-b border-gray-300 p-3
+}
+
+table td {
+  @apply border-b border-gray-300 p-3
+}
+
+table caption {
+  caption-side: bottom;
 }
 
 .jumbotron {

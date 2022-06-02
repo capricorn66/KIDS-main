@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.woff?13728x') format('woff');
+  src: url('fonts/icomoon.woff?fos9z5') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,24 @@
   vertical-align: middle;
 }
 
+.icon-alert:before {
+  content: "\e909";
+}
+.icon-bell:before {
+  content: "\e90a";
+}
+.icon-eye-close:before {
+  content: "\e90b";
+}
+.icon-eye-open:before {
+  content: "\e90c";
+}
+.icon-close:before {
+  content: "\e908";
+}
+.icon-arrow-right:before {
+  content: "\e907";
+}
 .icon-twitter:before {
   content: "\e904";
 }

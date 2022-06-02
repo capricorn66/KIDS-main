@@ -3,6 +3,7 @@ mixin button(args)
     - DEFAULT_OPTIONS.type = 'button'
     - DEFAULT_OPTIONS.variant = ''
     - DEFAULT_OPTIONS.label = ''
+    - DEFAULT_OPTIONS.modal = ''
     - DEFAULT_OPTIONS.disabled = false
     - args = Object.assign({}, DEFAULT_OPTIONS, args || {});
 
@@ -12,7 +13,8 @@ mixin button(args)
         class= attributes.class
         class= args.disabled && "disabled"
         class= args.size
-        class= args.variant)
+        class= args.variant
+        data-modal-open= args.modal)
         != args.label
 
         block

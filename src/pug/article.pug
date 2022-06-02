@@ -13,42 +13,68 @@ block body
         })
 
         main.container.mx-auto.px-3.grow.pb-16
+
             .text-md.py-4.border-b.border-gray-300.mb-10
                 a(href="" data-after="/" class="hover:text-orange-500 after:content-[attr(data-after)] after:mx-2") Super Kids
-                a(href="" data-after="/" class="hover:text-orange-500 after:content-[attr(data-after)] after:mx-2") Twoje konto
-                span.text-orange-500.font-bold Twoje dzieci
+                span.text-orange-500.font-bold Artykuł
 
+            .bg-white.border.drop-shadow-lg.rounded-xl.px-6.py-5.mb-6
 
-            h1.mb-4.font-bold.text-xsl Lorem ipsum dolor sit amet,
-            p.mb-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dicta distinctio ipsum, iusto minus officia optio, possimus provident quasi quibusdam saepe sit suscipit tenetur totam voluptas? Iure quod repellendus tenetur?
-            p.mb-2 Accusamus accusantium alias, autem beatae doloribus eaque, exercitationem fugiat molestiae perspiciatis repellendus similique temporibus voluptatum. Aliquid, culpa distinctio error est et exercitationem fuga incidunt itaque porro quasi quos repudiandae sit.
+                h1.mb-4.font-bold.text-xsl Lorem ipsum dolor sit amet,
+                p.mb-2 Lorem ipsum dolor sit amet, <a href="" class="text-green-600 font-medium hover:underline">consectetur adipisicing</a> elit. Animi dicta distinctio ipsum, iusto minus officia optio, possimus provident quasi quibusdam saepe sit suscipit tenetur totam voluptas? Iure quod repellendus tenetur?
+                p.mb-2 Accusamus accusantium alias, autem beatae doloribus eaque, exercitationem fugiat molestiae perspiciatis repellendus similique temporibus voluptatum. Aliquid, culpa distinctio error est et exercitationem fuga incidunt itaque porro quasi quos repudiandae sit.
 
-            h2.mb-3.font-bold.text-xxl Lorem ipsum dolor sit amet,
-            h3.mb-2.font-bold.text-sl Lorem ipsum dolor sit amet,
-            h4.mb-2.font-bold.text-xl Lorem ipsum dolor sit amet,
-            h5.mb-2.font-bold.text-lg Lorem ipsum dolor sit amet,
-            h6.mb-2.font-bold.text-md Lorem ipsum dolor sit amet,
+                h2.mb-3.font-bold.text-xxl Lorem ipsum dolor sit amet,
+                h3.mb-2.font-bold.text-sl Lorem ipsum dolor sit amet,
+                h4.mb-2.font-bold.text-xl Lorem ipsum dolor sit amet,
+                h5.mb-2.font-bold.text-lg Lorem ipsum dolor sit amet,
+                h6.mb-2.font-bold.text-md Lorem ipsum dolor sit amet,
 
-            hr.border-b.border-gray-300.my-3
+                hr.border-t.border-gray-300.my-3
 
-            ul.list-disc.ml-3.mb-3
-                li Animi dicta distinctio ipsum,
-                li Accusamus accusantium alias,
-                li Provident quasi
-                    ul.list-disc.ml-3.my-1
-                        li Animi dicta distinctio ipsum,
-                        li Accusamus accusantium alias,
-                        li Provident quasi quibusdam saepe
+                .mb-10
 
-                li Provident quasi quibusdam saepe
+                h4.mb-2.font-bold.text-xl Unordered list
 
-            hr.border-b.border-gray-300.my-3
+                ul.list-disc.ml-3.mb-3
+                    li Animi dicta distinctio ipsum,
+                    li Accusamus accusantium alias,
+                    li Provident quasi
+                        ul.list-disc.ml-3.my-1
+                            li Animi dicta distinctio ipsum,
+                            li Accusamus accusantium alias,
+                            li Provident quasi quibusdam saepe
 
-            ol.list-decimal.ml-3.mb-3
-                li Animi dicta distinctio ipsum,
-                li Accusamus accusantium alias,
-                li Provident quasi quibusdam saepe
+                    li Provident quasi quibusdam saepe
 
+                .mb-10
+
+                h4.mb-2.font-bold.text-xl Ordered list
+
+                ol.list-decimal.ml-3.mb-3
+                    li Animi dicta distinctio ipsum,
+                    li Accusamus accusantium alias,
+                    li Provident quasi quibusdam saepe
+
+                .mb-10
+
+                h4.mb-2.font-bold.text-xl Table with caption
+
+                .overflow-x-auto.mb-6
+                    table.table-auto.w-full
+                        caption.text-left.opacity-70.text-md.p-3 List of users
+                        tr
+                            th.text-left Animi
+                            th.text-left Accusamus
+                            th.text-left Provident
+                            th.text-left Quibusdam
+                            th.text-left Quasi
+                        tr
+                            td Animi
+                            td Animi dicta distinctio ipsum,
+                            td Accusamus accusantium alias,
+                            td Quibusdam
+                            td Provident quasi quibusdam saepe
 
 
         footer.bg-gray-100
