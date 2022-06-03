@@ -53,7 +53,7 @@ mixin header(args)
             +button({
                 type: "button",
                 size: 'h-10 px-2 md:px-6',
-                modal: '#login-modal',
+                modalOpen: '#login-modal',
                 variant: "bg-green-600 text-white text-lg drop-shadow-lg hover:drop-shadow-xl transition-all outline outline-2 hover:outline-green-600 focus:outline-green-600",
             })(class="sm:ml-auto md:ml-0 sm:w-auto")
                 span(class="hidden md:inline") Zaloguj się
@@ -61,7 +61,7 @@ mixin header(args)
             +button({
                 type: "button",
                 size: 'h-10 px-6',
-                modal: '#register-modal',
+                modalOpen: '#register-modal',
                 variant: "bg-orange-500 text-white text-lg drop-shadow-lg hover:drop-shadow-xl transition-all outline outline-2 hover:outline-orange-500 focus:outline-orange-500",
                 label: 'Zarejestruj się'
             }).ml-2(class="sm:ml-4")
