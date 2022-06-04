@@ -3,7 +3,6 @@ class Modal {
         this.body = document.querySelector('body');
         const modalOpenBtns = [...document.querySelectorAll('[data-modal-open]')];
         const modalCloseBtns = [...document.querySelectorAll('[data-modal-close]')];
-        this.closeHandler = this.closeOnEsc.bind(this, modal)
 
         modalOpenBtns.length && modalOpenBtns.forEach(btn => {
             const modal = btn.dataset.modalOpen && document.querySelector(btn.dataset.modalOpen)
@@ -40,7 +39,7 @@ class Modal {
     }
 
     openModal(modal) {
-
+        this.closeHandler = this.closeOnEsc.bind(this, modal)
         modal.classList.add('shown') ;
         setTimeout(() => this.body.classList.add('modal-open'),100);
         this.bindEsc(modal);
