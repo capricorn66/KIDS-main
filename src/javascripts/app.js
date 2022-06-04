@@ -13,9 +13,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
     onDomReady();
 
-    const cookieModal = document.querySelector('#cookie-modal');
     const modal = new Modal();
-    modal.openModal(cookieModal)
+    modal.openModal(document.querySelector('#cookie-modal'));
 
 }, false);
 
