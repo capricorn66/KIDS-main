@@ -77,7 +77,7 @@ block body
                     .relative
                         input(type="text" placeholder="adres e-mail").control-input
                     .relative
-                        .flex.items-center.h-9.absolute.right-3.text-xl.bg-white.rounded(class="my-0.5")
+                        .flex.items-center.h-9.absolute.right-3.text-xl.rounded(class="my-0.5")
                             button(type="button" data-input-password="#password-m").flex.items-center
                                 i.icon-eye-close.mx-2
                         input(type="password" placeholder="hasło" id="password-m").control-input
@@ -146,7 +146,7 @@ block body
                     .relative
                         input(type="text" placeholder="adres e-mail").control-input
                     .relative
-                        .flex.items-center.h-9.absolute.right-3.text-xl.bg-white.rounded(class="my-0.5")
+                        .flex.items-center.h-9.absolute.right-3.text-xl.rounded(class="my-0.5")
                             button(type="button" data-input-password="#password-r").flex.items-center
                                 i.icon-eye-close.mx-2
                         input(type="password" placeholder="hasło" id="password-r").control-input
@@ -195,7 +195,7 @@ block body
                             i.icon-arrow-right.text-sl
 
 
-        .modal(id="cookie-modal")
+        .modal(id="cookie-modal" data-modal-disable-esc="true")
             .modal-content
 
                 button(type="button" class="hover:opacity-90" data-modal-close="#cookie-modal").sticky.float-right.-top-5.-mt-8.-mr-8.text-md.opacity-60.transition

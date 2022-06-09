@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.woff?arh0b2') format('woff');
+  src: url('fonts/icomoon.woff?9nypkx') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,9 @@
   vertical-align: middle;
 }
 
+.icon-check:before {
+  content: "\e90e";
+}
 .icon-menu:before {
   content: "\e90d";
 }

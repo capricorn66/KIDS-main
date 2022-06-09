@@ -20,30 +20,43 @@ block body
             .bg-white.border.drop-shadow-lg.rounded-xl.py-5.mb-6(class="md:px-6 px-3")
 
                 h4.mb-2.font-bold.text-xl input forms
-                label(for="text").block.text-md.px-5.mb-1.pt-1 input label
+
+                .flex.justify-between.my-6.relative
+                    .rounded-full.h-1.mb-6.absolute.left-0.right-0.top-2.bg-gray-300
+                        .rounded-full.absolute.h-full.bg-green-600.text-center.text-sm.font-bold(style="width: 66.6666%")
+
+                    .w-5.h-5.rounded-full.bg-green-600.text-white.flex.items-center.justify-center.relative
+                        i.icon-check.text-base
+                    .w-5.h-5.rounded-full.bg-green-600.text-white.flex.items-center.justify-center.relative
+                        i.icon-check.text-base
+                    .w-5.h-5.rounded-full.bg-green-600.text-white.flex.items-center.justify-center.relative
+
+                    .w-5.h-5.rounded-full.bg-gray-300.text-white.flex.items-center.justify-center.relative
+
+                label(for="text").block.text-md.px-5.mb-1.pt-1.opacity-60 input label
                 .relative
-                    .flex.items-center.h-9.absolute.right-3.text-xl.bg-white.rounded(class="my-0.5")
+                    .flex.items-center.h-9.absolute.right-3.text-xl.rounded(class="my-0.5")
                         i.icon-alert.text-orange-500.mx-2
                     input(type="text" placeholder="adres e-mail" id="text").control-input.border.border-orange-500
                     .text-orange-500.text-sm.px-5.-mt-1.mb-3 To pole jest wymagane
 
-                label(for="password_input").block.text-md.px-5.mb-1.pt-1 password label
+                label(for="password_input").block.text-md.px-5.mb-1.pt-1.opacity-60 password label
                 .relative
-                    .flex.items-center.h-9.absolute.right-3.text-xl.bg-white.rounded(class="my-0.5")
+                    .flex.items-center.h-9.absolute.right-3.text-xl.rounded(class="my-0.5")
                         button(type="button" data-input-password="#password_input").flex.items-center
                             i.icon-eye-close.mx-2
                         i.icon-alert.text-orange-500.mx-2
                     input(type="password" placeholder="hasło" id="password_input").control-input.border.border-orange-500
                     .text-orange-500.text-sm.px-5.-mt-1.mb-3 To pole jest wymagane
 
-                label(for="password").block.text-md.px-5.mb-1.pt-1 password label
+                label(for="password").block.text-md.px-5.mb-1.pt-1.opacity-60 password label
                 .relative
-                    .flex.items-center.h-9.absolute.right-3.text-xl.bg-white.rounded(class="my-0.5")
+                    .flex.items-center.h-9.absolute.right-3.text-xl.rounded(class="my-0.5")
                         button(type="button" data-input-password="#password").flex.items-center
                             i.icon-eye-close.mx-2
                     input(type="password" placeholder="hasło" id="password").control-input
 
-                label(for="cars").block.text-md.px-5.mb-1.pt-1 select
+                label(for="cars").block.text-md.px-5.mb-1.pt-1.opacity-60 select
                 .relative
                     select(name="cars" id="cars").control-input
                         option(value="volvo") Volvo
@@ -51,7 +64,7 @@ block body
                         option(value="mercedes") Mercedes
                         option(value="audi") Audi
 
-                label(for="textarea").block.text-md.px-5.mb-1.pt-1 textarea label
+                label(for="textarea").block.text-md.px-5.mb-1.pt-1.opacity-60 textarea label
                 .relative
                     textarea(id="textarea").control-textarea
 
@@ -103,6 +116,14 @@ block body
                             .block.w-9.h-5.rounded-full.select-none.bg-blue-900(class="peer-checked:bg-green-600")
                             .absolute.bg-white.w-4.h-4.rounded-full.transition(class="peer-checked:translate-x-4 left-0.5 top-0.5")
                         .ml-2.text-md switch label
+
+                .flex
+                    +button({
+                        type: "button",
+                        size: 'h-10 px-6',
+                        label: "Dalej",
+                        variant: "bg-orange-500 text-white text-lg drop-shadow-lg hover:drop-shadow-xl transition-all outline outline-2 hover:outline-orange-500 focus:outline-orange-500",
+                    }).ml-auto
 
 
         footer.bg-gray-100

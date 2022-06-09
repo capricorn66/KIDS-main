@@ -4,17 +4,15 @@ import SideNav from "./class/SideNav";
 
 const onDomReady = function() {
     new PassToggle();
-    new Modal();
     new SideNav();
-}
+    const modal = new Modal();
 
+    modal.openModal(document.querySelector('#cookie-modal'));
+    modal.openModal(document.querySelector('#wizard-modal'));
+}
 
 document.addEventListener('DOMContentLoaded', function(){
 
     onDomReady();
 
-    const modal = new Modal();
-    modal.openModal(document.querySelector('#cookie-modal'));
-
 }, false);
-

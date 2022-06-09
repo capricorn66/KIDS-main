@@ -315,6 +315,38 @@ block body
                             hr.border-t.border-gray-300.my-2
                             a(href="" class="text-green-600 font-medium hover:underline") Dodaj nagrodę specjalną
 
+        .modal-backdrop
+        .modal(id="wizard-modal")
+            .modal-content
+
+                button(type="button" class="hover:opacity-90" data-modal-close="#wizard-modal").sticky.float-right.-top-5.-mt-8.-mr-8.text-md.opacity-60.transition
+                    i.icon-close
+
+                h4.mb-4.font-bold.text-xl Nowy proces
+
+                .flex.justify-between.my-6.relative
+                    .rounded-full.h-1.mb-6.absolute.left-0.right-0.top-2.bg-gray-300
+                        .rounded-full.absolute.h-full.bg-green-600.text-center.text-sm.font-bold(style="width: 50%")
+
+                    .w-5.h-5.rounded-full.bg-green-600.text-white.flex.items-center.justify-center.relative
+                        i.icon-check.text-base
+                    .w-5.h-5.rounded-full.bg-green-600.text-white.flex.items-center.justify-center.relative
+
+                    .w-5.h-5.rounded-full.bg-gray-300.text-white.flex.items-center.justify-center.relative
+
+                .mb-4
+                    label(for="text").block.text-md.px-5.mb-1.pt-1.opacity-60 Imię dziecka
+                    .relative
+                        input(type="text" placeholder="np. Kacper" id="text").control-input
+
+                .flex
+                    +button({
+                        type: "button",
+                        size: 'h-10 px-6',
+                        label: "Dalej",
+                        modalClose: "#wizard-modal",
+                        variant: "bg-orange-500 text-white text-lg drop-shadow-lg hover:drop-shadow-xl transition-all outline outline-2 hover:outline-orange-500 focus:outline-orange-500",
+                    }).ml-auto
 
 
         footer.bg-gray-100

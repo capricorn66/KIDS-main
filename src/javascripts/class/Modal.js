@@ -34,15 +34,17 @@ class Modal {
     }
 
     closeOnEsc(modal, e) {
-        this.clearEsc()
+        !(modal.dataset.modalDisableEsc) && this.clearEsc();
         e.key === 'Escape' && this.closeModal(modal)
     }
 
     openModal(modal) {
-        this.closeHandler = this.closeOnEsc.bind(this, modal)
-        modal.classList.add('shown') ;
-        setTimeout(() => this.body.classList.add('modal-open'),100);
-        this.bindEsc(modal);
+        if (typeof(modal) != 'undefined' && modal != null) {
+            this.closeHandler = this.closeOnEsc.bind(this, modal);
+            modal.classList.add('shown');
+            setTimeout(() => this.body.classList.add('modal-open'),100);
+            !(modal.dataset.modalDisableEsc) && this.bindEsc()
+        }
     }
 
     closeModal(modal) {
