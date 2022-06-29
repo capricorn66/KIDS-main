@@ -47,7 +47,7 @@ body.modal-open .modal {
 }
 
 .modal-content {
-  @apply bg-white py-8 px-12 rounded-xl w-11/12 max-w-[420px] relative max-h-full overflow-y-auto
+  @apply bg-white py-8 px-12 rounded-xl w-11/12 max-w-[420px] relative max-h-full overflow-y-auto overflow-x-hidden
 }
 
 table {
